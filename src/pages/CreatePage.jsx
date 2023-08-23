@@ -33,20 +33,20 @@ const CreatePage = () => {
             navigate('/patients')
 
         } catch (error) {
-           console.log("ESTO ES UN ERROR POR SI FALLA La API",error)
+           console.log("Esto es un error por si falla la API",error)
         }
     }
 
   return (
     <>
         <Navbar/>
-        <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl translate-y-6">
+        <div className="max-w-md mx-auto bg-white rounded-xl shadow-2xl overflow-hidden md:max-w-2xl translate-y-6">
             <div className="md:flex">
                 <div className='p-8 w-full'>
                     <div className="uppercase tracking-wide text-sm text-blue-500 font-semibold mb-1"> Form to add patient</div>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <input 
-                            className='shadow appearance-none border rounded w-full m-3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' 
+                            className='shadow appearance-none border border-slate-500 rounded w-full m-3 py-2 px-3 text-gray-700 placeholder-gray-500 leading-tight focus:outline-none focus:shadow-outline' 
                             type="text" 
                             {...register("name", {required:true})} 
                             placeholder='Patient Name'
@@ -54,7 +54,7 @@ const CreatePage = () => {
                         {errors.name && <span className='text-red-500 font-semibold text-sm bg-red-100 px-2 py-1 rounded'>This field is required</span>}
 
                         <input 
-                            className='shadow appearance-none border rounded w-full m-3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' 
+                            className='shadow appearance-none border border-slate-500 rounded w-full m-3 py-2 px-3 text-gray-700 placeholder-gray-500 leading-tight focus:outline-none focus:shadow-outline' 
                             type="number" 
                             {...register("age", {required:true})}
                             placeholder='Patient Age'
@@ -62,14 +62,14 @@ const CreatePage = () => {
                         {errors.age && <span className='text-red-500 font-semibold text-sm bg-red-100 px-2 py-1 rounded'>This field is required</span>}
 
                         <input 
-                            className='shadow appearance-none border rounded w-full m-3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' 
+                            className='shadow appearance-none border border-slate-500 rounded w-full m-3 py-2 px-3 text-gray-700 placeholder-gray-500 leading-tight focus:outline-none focus:shadow-outline' 
                             type="number" 
                             {...register("num_afi", {required:true})} 
                             placeholder='Patient affiliation number' 
                         />
                         {errors.num_afi && <span className='text-red-500 font-semibold text-sm bg-red-100 px-2 py-1 rounded'>This field is required</span>}
 
-                        <textarea className='shadow appearance-none border rounded m-3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+                        <textarea className='shadow appearance-none border border-slate-500 rounded m-3 w-full py-2 px-3 text-gray-700 placeholder-gray-500 leading-tight focus:outline-none focus:shadow-outline'
                             {...register("address", {required:true})}
                             id="" 
                             cols="30" 
@@ -79,7 +79,7 @@ const CreatePage = () => {
                         {errors.address && <span className='text-red-500 font-semibold text-sm bg-red-100 px-2 py-1 rounded'>This field is required</span>}
                         <br />
                         <br />
-                        <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' type='submit'>Add Patient</button>
+                        <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded  focus:outline-none focus:shadow-outline' type='submit'>Add Patient</button>
                     </form>
                 </div>
             </div>
